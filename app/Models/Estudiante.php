@@ -3,11 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Estudiante extends Model
 {
-    protected $fillable=[ 'nombre', 'cedula','correo', 'paralelo_id'];
-    public function paralelo(){
-        return $this->belongsTo(Paralelo::class);
-    }
+    use HasFactory;
+    //
+    protected $fillable = ['nombre', 'cedula', 'correo', 'paralelo_id'];
+
+    public function paralelo() {
+        return $this->belongsTo(Paralelo::class); // Cada estudiante pertenece a un paralelo
+        }
 }

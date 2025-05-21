@@ -1,10 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
 use App\Models\Estudiante;
 use App\Models\Paralelo;
-use Cron\CronExpression;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,13 +16,15 @@ class EstudianteFactory extends Factory
      * @return array<string, mixed>
      */
     protected $model = Estudiante::class;
+
     public function definition(): array
     {
         return [
-        'nombre'=> $this->faker->name(),
-        'cedula'=>$this->faker->unique()->numerify('##########'),
-        'correo'=>$this->faker->unique()->safeEmail(),
-        'paralelo_id'=>Paralelo::factory(),
+            //
+             'nombre' => $this->faker->name(),
+            'cedula' => $this->faker->unique()->numerify('##########'),
+            'correo' => $this->faker->unique()->safeEmail(),
+            'paralelo_id' => Paralelo::factory(),
         ];
     }
 }

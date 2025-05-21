@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('cedula');
             $table->string('correo');
-            $table->foreignId('paralelo_id')->constrain ('paralelo')->onDelete('cascade');
+            $table->foreignId('paralelo_id')->constrain('paralelo')->onDelete('cascade');
             $table->timestamps();
         });
     }
